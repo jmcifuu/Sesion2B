@@ -12,7 +12,27 @@ import pck.Empleado.TipoEmpleado;
 
 public class EmpleadoTest {
 	
+	@Test
+	public void testTipoEmpleadoEncargado() {		
+		float res = Empleado.CalculaNominaEmpleado(TipoEmpleado.Encargado, 1000f, 0f);
+		assertEquals(2600f, res, 0.001);
+	}
+
+	@Test
+	public void testTipoEmpleadoVendedor() {
+		float res = Empleado.CalculaNominaEmpleado(TipoEmpleado.Vendedor, 1000f, 0f);
+		assertEquals(2100f, res, 0.001);
+	}
+
+	@Test
+	public void testTipoEmpleadoNinguno() {
+		float res = Empleado.CalculaNominaEmpleado(null, 1000f, 0f);
+		assertEquals(-1f, res, 0.001);
+	}
+	
+	
 	// calculoNominaEmpleado (8 pruebas)
+	
 	
 	@Test
     public void testVentaMenorQue1000() {
